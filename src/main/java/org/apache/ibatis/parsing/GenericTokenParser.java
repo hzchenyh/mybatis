@@ -41,6 +41,7 @@ public class GenericTokenParser {
     if (text != null && text.length() > 0) {
       char[] src = text.toCharArray();
       int offset = 0;
+      //判断openToken在text中的位置，注意indexOf函数的返回值-1表示不存在，0表示在在开头的位置
       int start = text.indexOf(openToken, offset);
       //#{favouriteSection,jdbcType=VARCHAR}
       //这里是循环解析参数，参考GenericTokenParserTest,比如可以解析${first_name} ${initial} ${last_name} reporting.这样的字符串,里面有3个 ${}

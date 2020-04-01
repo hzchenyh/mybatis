@@ -190,7 +190,9 @@ public class MapperMethod {
   //SQL命令，静态内部类
   public static class SqlCommand {
 
+    //xml标签的id
     private final String name;
+    //insert update delete select的具体类型
     private final SqlCommandType type;
 
     public SqlCommand(Configuration configuration, Class<?> mapperInterface, Method method) {

@@ -40,6 +40,7 @@ public final class PropertyCopier {
       final Field[] fields = parent.getDeclaredFields();
       for(Field field : fields) {
         try {
+          //getDeclaredFields函数返回的这个类中各种限定符的属性，如果不设置accessible为true,在调用限定符是private的属性时会报错
           field.setAccessible(true);
           field.set(destinationBean, field.get(sourceBean));
         } catch (Exception e) {
