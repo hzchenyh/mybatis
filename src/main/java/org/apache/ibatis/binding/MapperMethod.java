@@ -49,6 +49,13 @@ public class MapperMethod {
   }
 
   //执行
+
+  /**
+   * 看着代码不少，不过其实就是先判断CRUD类型，然后根据类型去选择到底执行sqlSession中的哪个方法，绕了一圈，又转回sqlSession了
+   * @param sqlSession
+   * @param args
+   * @return
+   */
   public Object execute(SqlSession sqlSession, Object[] args) {
     Object result;
     //可以看到执行时就是4种情况，insert|update|delete|select，分别调用SqlSession的4大类方法
